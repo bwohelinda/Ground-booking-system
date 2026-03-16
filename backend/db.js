@@ -1,15 +1,19 @@
 const mysql = require('mysql2');
+require('dotenv').config(); // Load environment variables
 
-// Database connection configuration for XAMPP MySQL
+// Database connection configuration for Aiven MySQL
 const pool = mysql.createPool({
-  host: 'localhost',
-  port: 3306,
-  user: 'root',
-  password: '', // XAMPP default has no password
-  database: 'cricket_booking_db',
+  host: 'groundbookingdb-oshanhelinda8-7331.f.aivencloud.com',
+  port: 23085,
+  user: 'avnadmin',
+  password: process.env.DB_PASSWORD,
+  database: 'defaultdb',
   waitForConnections: true,
   connectionLimit: 10,
-  queueLimit: 0
+  queueLimit: 0,
+  ssl: {
+    rejectUnauthorized: true // Aiven requires SSL
+  }
 });
 
 // Test database connection
