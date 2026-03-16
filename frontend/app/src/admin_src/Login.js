@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Button, Alert, Spinner } from 'react-bootstrap';
 import { Lock, User, Shield } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://entitled-matilda-oshanhelinda-cc3c8e21.koyeb.app/api';
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('');

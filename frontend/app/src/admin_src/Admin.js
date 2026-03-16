@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Table, Button, Modal, Form, Badge, Tabs, Tab, Image, Row, Col, Spinner } from 'react-bootstrap';
 import { Plus, Trash2, Edit, Upload, Users, MapPin, DollarSign, Calendar, LogOut, CheckCircle } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://entitled-matilda-oshanhelinda-cc3c8e21.koyeb.app/api';
 
 const Admin = ({ onLogout }) => {
   const [grounds, setGrounds] = useState([]);

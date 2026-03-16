@@ -5,7 +5,7 @@ import { Clock, Calendar, CheckCircle, XCircle, CreditCard, User, Phone, Lock, S
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://entitled-matilda-oshanhelinda-cc3c8e21.koyeb.app/api';
 
 const Booking = () => {
   const { id } = useParams();

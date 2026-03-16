@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Container, Form, Button, Alert, Spinner, Row, Col } from 'react-bootstrap';
 import { User, Mail, Lock, UserPlus, Shield } from 'lucide-react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://entitled-matilda-oshanhelinda-cc3c8e21.koyeb.app/api';
 
 const Register = ({ onSuccess }) => {
   const [formData, setFormData] = useState({
