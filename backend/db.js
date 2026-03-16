@@ -3,11 +3,11 @@ require('dotenv').config(); // Load environment variables
 
 // Database connection configuration for Aiven MySQL
 const pool = mysql.createPool({
-  host: 'groundbookingdb-oshanhelinda8-7331.f.aivencloud.com',
-  port: 23085,
-  user: 'avnadmin',
+  host: process.env.DB_HOST || 'groundbookingdb-oshanhelinda8-7331.f.aivencloud.com',
+  port: parseInt(process.env.DB_PORT) || 23085,
+  user: process.env.DB_USER || 'avnadmin',
   password: process.env.DB_PASSWORD,
-  database: 'defaultdb',
+  database: process.env.DB_NAME || 'defaultdb',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,

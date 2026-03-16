@@ -4,7 +4,9 @@ const bcrypt = require('bcrypt');
 const db = require('./db'); // Import the db.js file we created
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'http://localhost:3000'
+}));
 app.use(express.json({ limit: '10mb' }));
 
 // Root route
@@ -206,4 +208,5 @@ app.post('/api/payments', async (req, res) => {
   }
 });
 
-app.listen(5000, () => console.log("Server is running on Port 5000"));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server is running on Port ${PORT}`));
