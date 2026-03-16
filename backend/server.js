@@ -79,7 +79,7 @@ app.post('/api/login', async (req, res) => {
 // Get all grounds/stadiums
 app.get('/api/grounds', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT id, stadium_name as name, is_active, price, description, photo, CASE WHEN is_active = 1 THEN "Active" ELSE "Inactive" END as status FROM stadiums');
+    const [rows] = await db.query("SELECT id, stadium_name as name, is_active, price, description, photo, CASE WHEN is_active = 1 THEN 'Active' ELSE 'Inactive' END as status FROM stadiums");
     res.json(rows);
   } catch (err) {
     res.status(500).json({ error: err.message });
