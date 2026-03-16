@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, Button, Spinner, Alert } from 'react-bootstr
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Clock, Star, ArrowRight } from 'lucide-react';
 
-const API_URL = 'https://entitled-matilda-oshanhelinda-cc3c8e21.koyeb.app/api';
+const API_URL = process.env.REACT_APP_API_URL || 'https://satisfied-devonne-oshanhelinda-6a43d45e.koyeb.app/api';
 
 const Home = () => {
   const navigate = useNavigate();
