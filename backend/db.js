@@ -12,7 +12,7 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   queueLimit: 0,
   ssl: {
-    rejectUnauthorized: true // Aiven requires SSL
+    rejectUnauthorized: false // Set to false since the CA is not provided locally
   }
 });
 
@@ -20,7 +20,7 @@ const pool = mysql.createPool({
 pool.getConnection((err, connection) => {
   if (err) {
     console.error('Database connection failed:', err.message);
-    console.error('Make sure XAMPP MySQL is running and database "cricket_db" exists');
+    console.error('Make sure the Aiven instance is running and accessible.');
   } else {
     console.log('Database connected successfully! (Via db.js)');
     connection.release();
